@@ -20,14 +20,20 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Expecta (0.3.1)
   - ProtocolBuffers (1.9.1)
+  - Specta (0.2.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - Expecta
   - ProtocolBuffers
+  - Specta
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
   ProtocolBuffers: 590247bc4ad15e69d52acfcd0b1512485f051e2e
+  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
 COCOAPODS: 0.33.1

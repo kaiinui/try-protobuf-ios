@@ -21,12 +21,20 @@ static PBExtensionRegistry* extensionRegistry = nil;
 @end
 
 @interface Book ()
+@property (strong) NSString* bookId;
 @property (strong) NSString* title;
 @property SInt32 pageNumber;
 @end
 
 @implementation Book
 
+- (BOOL) hasBookId {
+  return !!hasBookId_;
+}
+- (void) setHasBookId:(BOOL) value_ {
+  hasBookId_ = !!value_;
+}
+@synthesize bookId;
 - (BOOL) hasTitle {
   return !!hasTitle_;
 }
@@ -43,6 +51,7 @@ static PBExtensionRegistry* extensionRegistry = nil;
 @synthesize pageNumber;
 - (id) init {
   if ((self = [super init])) {
+    self.bookId = @"";
     self.title = @"";
     self.pageNumber = 0;
   }
@@ -61,6 +70,9 @@ static Book* defaultBookInstance = nil;
   return defaultBookInstance;
 }
 - (BOOL) isInitialized {
+  if (!self.hasBookId) {
+    return NO;
+  }
   if (!self.hasTitle) {
     return NO;
   }
@@ -76,6 +88,9 @@ static Book* defaultBookInstance = nil;
   if (self.hasPageNumber) {
     [output writeInt32:2 value:self.pageNumber];
   }
+  if (self.hasBookId) {
+    [output writeString:3 value:self.bookId];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -90,6 +105,9 @@ static Book* defaultBookInstance = nil;
   }
   if (self.hasPageNumber) {
     size_ += computeInt32Size(2, self.pageNumber);
+  }
+  if (self.hasBookId) {
+    size_ += computeStringSize(3, self.bookId);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -132,6 +150,9 @@ static Book* defaultBookInstance = nil;
   if (self.hasPageNumber) {
     [output appendFormat:@"%@%@: %@\n", indent, @"pageNumber", [NSNumber numberWithInteger:self.pageNumber]];
   }
+  if (self.hasBookId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"bookId", self.bookId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (BOOL) isEqual:(id)other {
@@ -147,6 +168,8 @@ static Book* defaultBookInstance = nil;
       (!self.hasTitle || [self.title isEqual:otherMessage.title]) &&
       self.hasPageNumber == otherMessage.hasPageNumber &&
       (!self.hasPageNumber || self.pageNumber == otherMessage.pageNumber) &&
+      self.hasBookId == otherMessage.hasBookId &&
+      (!self.hasBookId || [self.bookId isEqual:otherMessage.bookId]) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -156,6 +179,9 @@ static Book* defaultBookInstance = nil;
   }
   if (self.hasPageNumber) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInteger:self.pageNumber] hash];
+  }
+  if (self.hasBookId) {
+    hashCode = hashCode * 31 + [self.bookId hash];
   }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
@@ -200,6 +226,9 @@ static Book* defaultBookInstance = nil;
   if (other == [Book defaultInstance]) {
     return self;
   }
+  if (other.hasBookId) {
+    [self setBookId:other.bookId];
+  }
   if (other.hasTitle) {
     [self setTitle:other.title];
   }
@@ -235,8 +264,28 @@ static Book* defaultBookInstance = nil;
         [self setPageNumber:[input readInt32]];
         break;
       }
+      case 26: {
+        [self setBookId:[input readString]];
+        break;
+      }
     }
   }
+}
+- (BOOL) hasBookId {
+  return result.hasBookId;
+}
+- (NSString*) bookId {
+  return result.bookId;
+}
+- (BookBuilder*) setBookId:(NSString*) value {
+  result.hasBookId = YES;
+  result.bookId = value;
+  return self;
+}
+- (BookBuilder*) clearBookId {
+  result.hasBookId = NO;
+  result.bookId = @"";
+  return self;
 }
 - (BOOL) hasTitle {
   return result.hasTitle;

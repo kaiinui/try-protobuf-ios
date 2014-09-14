@@ -30,6 +30,41 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
+		<key>1C23B973977942AB8F200CEE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>329E0A8DA8FC49F3A7219643</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>329E0A8DA8FC49F3A7219643</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-myprotobufTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3445F10BF21946699E07C805</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-myprotobufTests.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods-myprotobufTests.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>6455644B3805455CA648F8C7</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -69,6 +104,36 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>80FD983862F64589BBE388D2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>A2E9FEC7E41F4E0EB2E3F90C</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -99,6 +164,30 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
+		<key>B90FECC79640407484FEBCB3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-myprotobufTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>D4C24CE819C5EA1A0015639A</key>
 		<dict>
 			<key>children</key>
@@ -108,6 +197,7 @@ fi
 				<string>D4C24CF319C5EA1A0015639A</string>
 				<string>D4C24CF219C5EA1A0015639A</string>
 				<string>7542643A8DA1413AAEA4F683</string>
+				<string>3445F10BF21946699E07C805</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -187,7 +277,7 @@ fi
 				<string>D4C24D0B19C5EA1A0015639A</string>
 				<string>D4C24D0519C5EA1A0015639A</string>
 				<string>D4C24D0119C5EA1A0015639A</string>
-				<string>D4C24D2B19C5EAB10015639A</string>
+				<string>D4C24D2E19C5EEE40015639A</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -288,6 +378,7 @@ fi
 				<string>D4C24CF819C5EA1A0015639A</string>
 				<string>D4C24D1319C5EA1A0015639A</string>
 				<string>17B59F813FD14A2BA0143902</string>
+				<string>329E0A8DA8FC49F3A7219643</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -362,9 +453,9 @@ fi
 			<array>
 				<string>D4C24D0319C5EA1A0015639A</string>
 				<string>D4C24D0419C5EA1A0015639A</string>
-				<string>D4C24D2919C5EAB10015639A</string>
-				<string>D4C24D2A19C5EAB10015639A</string>
 				<string>D4C24D0619C5EA1A0015639A</string>
+				<string>D4C24D2C19C5EEE40015639A</string>
+				<string>D4C24D2D19C5EEE40015639A</string>
 				<string>D4C24D0919C5EA1A0015639A</string>
 				<string>D4C24D0A19C5EA1A0015639A</string>
 				<string>D4C24D0C19C5EA1A0015639A</string>
@@ -597,6 +688,7 @@ fi
 				<string>D4C24D1419C5EA1A0015639A</string>
 				<string>D4C24D1619C5EA1A0015639A</string>
 				<string>D4C24D1519C5EA1A0015639A</string>
+				<string>1C23B973977942AB8F200CEE</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -622,9 +714,11 @@ fi
 			<string>D4C24D2619C5EA1A0015639A</string>
 			<key>buildPhases</key>
 			<array>
+				<string>80FD983862F64589BBE388D2</string>
 				<string>D4C24D0E19C5EA1A0015639A</string>
 				<string>D4C24D0F19C5EA1A0015639A</string>
 				<string>D4C24D1019C5EA1A0015639A</string>
+				<string>B90FECC79640407484FEBCB3</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -944,6 +1038,8 @@ fi
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -1008,11 +1104,15 @@ fi
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
 		<key>D4C24D2719C5EA1A0015639A</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3445F10BF21946699E07C805</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -1048,6 +1148,8 @@ fi
 		</dict>
 		<key>D4C24D2819C5EA1A0015639A</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3445F10BF21946699E07C805</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -1076,7 +1178,7 @@ fi
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>D4C24D2919C5EAB10015639A</key>
+		<key>D4C24D2C19C5EEE40015639A</key>
 		<dict>
 			<key>fileEncoding</key>
 			<string>4</string>
@@ -1089,7 +1191,7 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D4C24D2A19C5EAB10015639A</key>
+		<key>D4C24D2D19C5EEE40015639A</key>
 		<dict>
 			<key>fileEncoding</key>
 			<string>4</string>
@@ -1102,10 +1204,10 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D4C24D2B19C5EAB10015639A</key>
+		<key>D4C24D2E19C5EEE40015639A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D4C24D2A19C5EAB10015639A</string>
+			<string>D4C24D2D19C5EEE40015639A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>

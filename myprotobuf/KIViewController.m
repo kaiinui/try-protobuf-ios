@@ -8,6 +8,8 @@
 
 #import "KIViewController.h"
 
+#import "Book.pb.h"
+
 @interface KIViewController ()
 
 @end
@@ -17,6 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSData *bookData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://0.0.0.0:3000/books/somebook"]];
+    
+    Book *book = [Book parseFromData:bookData];
+
+    NSLog(@"%@", book);
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

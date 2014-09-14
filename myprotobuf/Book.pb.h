@@ -28,12 +28,16 @@
 @interface Book : PBGeneratedMessage {
 @private
   BOOL hasPageNumber_:1;
+  BOOL hasBookId_:1;
   BOOL hasTitle_:1;
   SInt32 pageNumber;
+  NSString* bookId;
   NSString* title;
 }
+- (BOOL) hasBookId;
 - (BOOL) hasTitle;
 - (BOOL) hasPageNumber;
+@property (readonly, strong) NSString* bookId;
 @property (readonly, strong) NSString* title;
 @property (readonly) SInt32 pageNumber;
 
@@ -71,6 +75,11 @@
 - (BookBuilder*) mergeFrom:(Book*) other;
 - (BookBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
 - (BookBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasBookId;
+- (NSString*) bookId;
+- (BookBuilder*) setBookId:(NSString*) value;
+- (BookBuilder*) clearBookId;
 
 - (BOOL) hasTitle;
 - (NSString*) title;
